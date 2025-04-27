@@ -1,8 +1,18 @@
-This n8n poc assume you have some knowledge of electronic, python and rasberry pi. And You need to have a pay openai API
+# n8n Proof of Concept: Telegram-Controlled Gate Using Raspberry Pi
 
-Flow 
+This proof of concept demonstrates how to use **n8n**, **Telegram**, and a **Raspberry Pi** to automate your gate system. Before you proceed, ensure you have:
+
+- Basic knowledge of electronics, Python, and the Raspberry Pi.
+- An OpenAI API account (for AI-powered message handling).
+- The required libraries installed on your Raspberry Pi.
+
+---
+
+## Flow Overview
+
 ![Open Gate Image](https://github.com/WeiKeeYong/n8n_ideas_poc/raw/main/images/n8n_open_gate.jpg)
 
+---
 
 <details>
   <summary>Below the JSON file in </summary>
