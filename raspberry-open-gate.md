@@ -425,8 +425,10 @@ This Python script runs on the Raspberry Pi to control the gate relays via HTTP 
 
 
 ```python
-#using Pin 11 and Pin 13 in rasberry. For some reason, High is off. And Relay i am using Generic HL-52s Google for schematic. 
-#Gate remote are basic remote that i tap the button switch to the relay. Please adjust the duration, depending your relay sensitivity.
+# Relay control script for Raspberry Pi
+# Uses GPIO pins 17 (Relay 1) and 27 (Relay 2) for gate control.
+# Note: The relays used are Generic HL-52S, where HIGH is OFF and LOW is ON.
+# Adjust the `duration` variable based on your relay's sensitivity and gate remote requirements.
 
 import time
 import threading
