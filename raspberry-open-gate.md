@@ -464,3 +464,15 @@ def relay2_on():
     thread.daemon = True  # Make as thread
 ```
 </details>
+
+## Disclaimer
+
+**Important**: This project is a Proof of Concept (PoC) intended for educational and experimental purposes only. It involves working with electronics (e.g., Raspberry Pi, relays) and external devices (e.g., gate remote systems), which can pose risks if not handled properly. Please note the following:
+
+- **Electrical Safety**: Working with relays and gate systems involves electrical components. Improper wiring or handling may cause electric shock, injury, or damage to equipment. You are responsible for ensuring safe practices and consulting a qualified electrician if needed.
+- **Device Damage**: Incorrect setup of the Raspberry Pi, relays, or gate remote may damage your hardware or gate system. Any such damage is not the responsibility of the project author. Always verify connections and follow proper schematics (e.g., for Generic HL-52S relays).
+- **External Devices**: Gate systems vary widely. This PoC assumes a basic gate remote setup. Unintended gate behavior or mechanical failure is your responsibility to prevent through thorough testing in a controlled environment.
+- **No Liability**: This project is provided "as is" with no warranty. The author is not responsible for any damage, injury, loss, or other issues resulting from its use.
+- **Proceed with Caution**: If you lack experience with electronics or automation, seek professional guidance before attempting this project.
+
+Always prioritize safety and test the system in a safe, controlled setting. Any risks, including device damage, are your responsibility.
