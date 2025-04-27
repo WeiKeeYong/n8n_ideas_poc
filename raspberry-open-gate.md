@@ -42,10 +42,10 @@ The n8n workflow orchestrates the entire process, from receiving Telegram messag
 7. **Telegram Response**: Sends confirmation messages back to the user (e.g., "The gate is now open for your car.").
 
 ---
-</details>
-<summary>n8n Workflow JSON Configuration</summary>
 
-The following JSON defines the n8n workflow, including nodes for Telegram integration, AI processing, and HTTP requests to the Raspberry Pi. Copy this into your n8n instance to replicate the workflow.
+
+<details>
+  <summary>n8n Workflow JSON Configuration</summary>
 
 ```json
 {
