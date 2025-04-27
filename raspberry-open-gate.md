@@ -1,5 +1,8 @@
 This n8n poc assume you have some knowledge of electronic, python and rasberry pi. And You need to have a pay openai API
 
+Flow 
+![Open Gate Image](https://github.com/WeiKeeYong/n8n_ideas_poc/raw/main/images/n8n_open_gate.jpg)
+
 
 <details>
   <summary>Below the JSON file in </summary>
