@@ -371,8 +371,9 @@ Below the JSON file in
 }
 ```
 
+<details>
+  <summary>Python code run in Rasberry Pi, you need to have the respective library and basic Python knowledge.</summary>
 
-Python code run in Rasberry Pi, you need to have the respective library and basic Python knowledge. 
 ```python
 #using Pin 11 and Pin 13 in rasberry. For some reason, High is off. And Relay i am using Generic HL-52s Google for schematic. 
 #Gate remote are basic remote that i tap the button switch to the relay. Please adjust the duration, depending your relay sensitivity.
@@ -410,3 +411,4 @@ def relay2_on():
     thread = threading.Thread(target=activate_relay, args=(27,))
     thread.daemon = True  # Make as thread
 ```
+</details>
