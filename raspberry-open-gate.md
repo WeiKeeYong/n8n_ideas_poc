@@ -1,7 +1,7 @@
 This n8n poc assume you have some knowledge of electronic, python and rasberry pi. And You need to have a pay openai API
 
 Below the JSON file in 
-```
+```json
 {
   "name": "Telegram Open Gate",
   "nodes": [
@@ -373,7 +373,7 @@ Below the JSON file in
 
 
 Python code run in Rasberry Pi, you need to have the respective library and basic Python knowledge. 
-```
+```python
 #using Pin 11 and Pin 13 in rasberry. For some reason, High is off. And Relay i am using Generic HL-52s Google for schematic. 
 #Gate remote are basic remote that i tap the button switch to the relay. Please adjust the duration, depending your relay sensitivity.
 
