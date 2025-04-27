@@ -1,6 +1,9 @@
 This n8n poc assume you have some knowledge of electronic, python and rasberry pi. And You need to have a pay openai API
 
-Below the JSON file in 
+
+<details>
+  <summary>Below the JSON file in </summary>
+
 ```json
 {
   "name": "Telegram Open Gate",
@@ -370,7 +373,8 @@ Below the JSON file in
   "tags": []
 }
 ```
-
+</details>
+  
 <details>
   <summary>Python code run in Rasberry Pi, you need to have the respective library and basic Python knowledge.</summary>
 
