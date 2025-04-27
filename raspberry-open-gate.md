@@ -46,6 +46,7 @@ The n8n workflow orchestrates the entire process, from receiving Telegram messag
 
 <details>
   <summary>n8n Workflow JSON Configuration</summary>
+The following JSON defines the n8n workflow, including nodes for Telegram integration, AI processing, and HTTP requests to the Raspberry Pi. Copy this into your n8n instance to replicate the workflow.
 
 ```json
 {
