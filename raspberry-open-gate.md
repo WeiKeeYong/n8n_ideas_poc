@@ -476,3 +476,4 @@ def relay2_on():
 - **Proceed with Caution**: If you lack experience with electronics or automation, seek professional guidance before attempting this project.
 
 Always prioritize safety and test the system in a safe, controlled setting. Any risks, including device damage, are your responsibility.
+:speaking_head::door::smile: 
