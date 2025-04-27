@@ -1,21 +1,51 @@
-# n8n Proof of Concept: Telegram-Controlled Gate Using Raspberry Pi
+# n8n Proof of Concept: Telegram-Controlled Automated Gate System with Raspberry Pi
 
-This proof of concept demonstrates how to use **n8n**, **Telegram**, and a **Raspberry Pi** to automate your gate system. Before you proceed, ensure you have:
+This Proof of Concept (PoC) showcases an innovative automation workflow that integrates **n8n**, **Telegram**, and a **Raspberry Pi** to remotely control a gate system via text or voice commands. By leveraging n8n's powerful workflow automation, Telegram's messaging capabilities, and the Raspberry Pi's hardware control, this project enables seamless gate operation for pedestrians, cyclists, or vehicles. Whether you're opening a side gate for a bike or both gates for a car, this system provides a flexible and user-friendly solution.
 
-- Basic knowledge of electronics, Python, and the Raspberry Pi.
-- An OpenAI API account (for AI-powered message handling).
-- The required libraries installed on your Raspberry Pi.
+Before diving into the setup, ensure you have the following prerequisites:
+
+- **Basic Knowledge**: Familiarity with electronics, Python programming, and Raspberry Pi configuration.
+- **OpenAI API Account**: Required for AI-powered text and voice message processing.
+- **Required Libraries**: Install necessary Python libraries on your Raspberry Pi (e.g., `RPi.GPIO`, `Flask`).
+- **Hardware**: A Raspberry Pi, relays (e.g., Generic HL-52S), and a gate remote system wired to the relays.
+
+Special thanks to [this YouTube tutorial](https://www.youtube.com/watch?v=-dJOa_MSwsk) for inspiration on handling voice and text inputs.
 
 ---
 
-## Flow Overview
+## System Overview
 
-![Open Gate Image](https://github.com/WeiKeeYong/n8n_ideas_poc/raw/main/images/n8n_open_gate.jpg)
+This PoC enables users to send commands via Telegram (e.g., "Open gate for my car" or "Close gate") to control a gate system. The workflow interprets these commands using AI, triggers the appropriate Raspberry Pi relay, and sends a confirmation back to the user. The system supports:
+
+- **Text and Voice Inputs**: Users can send text messages or voice notes via Telegram.
+- **Context-Aware Gate Control**: The AI distinguishes between requests for side gate (for bikes, pedestrians) or both gates (for cars, lorries).
+- **Polite Error Handling**: Non-gate-related requests (e.g., "What's the weather?") receive a friendly response redirecting focus to gate control.
+
+The workflow is visualized below:
+
+![Gate Control Workflow](https://github.com/WeiKeeYong/n8n_ideas_poc/raw/main/images/n8n_open_gate.jpg)
 
 ---
 
-<details>
-  <summary>Below the JSON file in </summary>
+## Workflow Details
+
+The n8n workflow orchestrates the entire process, from receiving Telegram messages to triggering the Raspberry Pi relays. Below is a detailed breakdown of the workflow, followed by the JSON configuration and the Python script for the Raspberry Pi.
+
+### Key Components
+
+1. **Telegram Trigger**: Listens for incoming messages (text or voice) from the Telegram bot.
+2. **Switch Node**: Routes messages based on whether they are text or voice inputs.
+3. **Voice Processing**: Converts voice messages to text using OpenAI's transcription service.
+4. **AI Agent**: Analyzes user requests, selects the appropriate gate control action, and responds in the user's language.
+5. **HTTP Requests**: Sends commands to the Raspberry Pi to activate relays for opening/closing gates.
+6. **Memory Buffer**: Maintains a short conversation history for context-aware responses.
+7. **Telegram Response**: Sends confirmation messages back to the user (e.g., "The gate is now open for your car.").
+
+---
+
+  <summary>n8n Workflow JSON Configuration</summary>
+
+The following JSON defines the n8n workflow, including nodes for Telegram integration, AI processing, and HTTP requests to the Raspberry Pi. Copy this into your n8n instance to replicate the workflow.
 
 ```json
 {
@@ -389,7 +419,9 @@ This proof of concept demonstrates how to use **n8n**, **Telegram**, and a **Ras
 </details>
   
 <details>
-  <summary>Python code run in Rasberry Pi, you need to have the respective library and basic Python knowledge.</summary>
+<summary>Raspberry Pi Python Script</summary>
+This Python script runs on the Raspberry Pi to control the gate relays via HTTP requests. It uses the Flask framework to create a simple web server and the RPi.GPIO library to manage the relays. Ensure you have the required libraries installed and basic Python knowledge.
+
 
 ```python
 #using Pin 11 and Pin 13 in rasberry. For some reason, High is off. And Relay i am using Generic HL-52s Google for schematic. 
